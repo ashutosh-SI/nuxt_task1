@@ -1,9 +1,9 @@
 <template>
-    <div class="product-card">
-      <nuxt-link :to="`/product/${product.id}`">
-        <img :src="product.image" alt="Product image" />
-        <h3>{{ product.title }}</h3>
-      </nuxt-link>
+    <div class="product-details">
+      <img :src="product.image" alt="Product image" />
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
       <p><strong>Price:</strong> ${{ product.price }}</p>
     </div>
   </template>
@@ -20,13 +20,12 @@
   </script>
   
   <style>
-  .product-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
+  .product-details {
+    max-width: 600px;
+    margin: auto;
     text-align: center;
   }
-  .product-card img {
+  .product-details img {
     max-width: 100%;
     height: auto;
   }
